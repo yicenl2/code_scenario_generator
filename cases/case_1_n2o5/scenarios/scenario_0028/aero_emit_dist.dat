@@ -1,0 +1,40 @@
+mode_name carbo
+mass_frac aero_emit_comp_carbo.dat # composition proportions of species
+diam_type geometric             # type of diameter specified
+mode_type log_normal            # type of distribution
+num_conc 7.407e+06                     # particle number density (#/m^3)
+geom_mean_diam 2.015e-07                # geometric mean diameter (m)
+log10_geom_std_dev 0.3349           # log_10 of geometric std dev of diameter
+
+mode_name ss1
+mass_frac aero_emit_comp_ss1.dat # composition proportions of species
+diam_type geometric             # type of diameter specified
+mode_type log_normal            # type of distribution
+num_conc 7.131e+04                     # particle number density (#/m^3)
+geom_mean_diam 1.926e-07                # geometric mean diameter (m)
+log10_geom_std_dev 0.3566           # log_10 of geometric std dev of diameter
+
+mode_name ss2
+mass_frac aero_emit_comp_ss2.dat # composition proportions of species
+diam_type geometric             # type of diameter specified
+mode_type log_normal            # type of distribution
+num_conc 549.0                     # particle number density (#/m^3)
+geom_mean_diam 3.314e-06                # geometric mean diameter (m)
+log10_geom_std_dev 0.3611           # log_10 of geometric std dev of diameter
+
+mode_name dust1
+mass_frac aero_emit_comp_dust1.dat # composition proportions of species
+diam_type geometric             # type of diameter specified
+mode_type log_normal            # type of distribution
+num_conc 5.599e+05                     # particle number density (#/m^3)
+geom_mean_diam 1.007e-07                # geometric mean diameter (m)
+log10_geom_std_dev 0.3956           # log_10 of geometric std dev of diameter
+
+mode_name dust2
+mass_frac aero_emit_comp_dust2.dat # composition proportions of species
+diam_type geometric             # type of diameter specified
+mode_type log_normal            # type of distribution
+num_conc 182.1                     # particle number density (#/m^3)
+geom_mean_diam 3.925e-06                # geometric mean diameter (m)
+log10_geom_std_dev 0.1493           # log_10 of geometric std dev of diameter
+
