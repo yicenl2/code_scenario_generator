@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=PartMCScenarioGen1
-#SBATCH -n 21
+#SBATCH -n 24
 #SBATCH -p sesempi 
 #SBATCH --time=24:00:00
 #SBATCH --mem-per-cpu=4000
@@ -9,16 +9,16 @@
 # Email when finished
 #SBATCH --mail-type=END
 # My email address
-#SBATCH --mail-user=yuyao3@illinois.edu
-export case=case_5
-export scenario_num_plus_1=21
-#export SLURM_SUBMIT_DIR  = /data/keeling/a/yuyao3/d/Thesis/paper_chi_opt/scenario_generator-master 
+#SBATCH --mail-user=yicenl2@illinois.edu
+export case=case_1_n2o5
+export scenario_num_plus_1=101
+#export SLURM_SUBMIT_DIR  = /data/keeling/a/yicenl2/d/project_n2o5/code_scenario_generator 
 # The job script can create its own job-ID-unique directory 
 # to run within.  In that case you'll need to create and populate that 
 # directory with executables and inputs
-mkdir -p /data/keeling/a/yuyao3/d/Thesis/paper_chi_opt/scenario_libs/$SLURM_JOB_ID
-cd /data/keeling/a/yuyao3/d/Thesis/paper_chi_opt/scenario_libs/$SLURM_JOB_ID
-export PMC_PATH=/data/keeling/a/yuyao3/c/partmc-2.5.0
+mkdir -p /data/keeling/a/yicenl2/d/project_n2o5/scenario_libs/$SLURM_JOB_ID
+cd /data/keeling/a/yicenl2/d/project_n2o5/scenario_libs/$SLURM_JOB_ID
+export PMC_PATH=/data/keeling/a/yicenl2/d/project_n2o5/partmc
 cp -r $PMC_PATH/build build
 cp -r $PMC_PATH/src src
 # Copy the scenario directory that holds all the inputs files

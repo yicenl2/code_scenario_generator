@@ -63,7 +63,7 @@ def modify_aero_emit_comp_ss1(directory, matrix):
     flist[1] = "OC              " + "{:.4}".format(matrix[28]) + "\n"
     flist[2] = "Na              " + "{:.4}".format((1-matrix[28])*0.3856) + "\n"
     flist[3] = "Cl              " + "{:.4}".format((1-matrix[28])*0.5389) + "\n"
-    flist[3] = "SO4             " + "{:.4}".format((1-matrix[28])*0.0755) + "\n"
+    flist[4] = "SO4             " + "{:.4}".format((1-matrix[28])*0.0755) + "\n"
     f=open(directory+"/aero_emit_comp_ss1.dat", "w+")
     f.writelines(flist)
     f.close()
@@ -76,7 +76,7 @@ def modify_aero_emit_comp_ss2(directory, matrix):
     flist[1] = "OC              " + "{:.4}".format(matrix[32]) + "\n"
     flist[2] = "Na              " + "{:.4}".format((1-matrix[32])*0.3856) + "\n"
     flist[3] = "Cl              " + "{:.4}".format((1-matrix[32])*0.5389) + "\n"
-    flist[3] = "SO4             " + "{:.4}".format((1-matrix[32])*0.0755) + "\n"
+    flist[4] = "SO4             " + "{:.4}".format((1-matrix[32])*0.0755) + "\n"
     f=open(directory+"/aero_emit_comp_ss2.dat", "w+")
     f.writelines(flist)
     f.close()
@@ -90,7 +90,12 @@ def modify_aero_emit_dist(directory, matrix, ss_option, dust_option):
     flist[4] = "num_conc " + "{:.4}".format(matrix[23]) + "                     # particle number density (#/m^3)\n"
     flist[5] = "geom_mean_diam " + "{:.4}".format(matrix[21]) + "                # geometric mean diameter (m)\n"
     flist[6] = "log10_geom_std_dev " + "{:.4}".format(math.log10(matrix[22])) + "           # log_10 of geometric std dev of diameter\n"
-    
+   
+    # sulfate
+    flist[44] = "num_conc " + "{:.4}".format(matrix[41]) + "                     # particle number density (#/m^3)\n"
+    flist[45] = "geom_mean_diam " + "{:.4}".format(matrix[39]) + "                # geometric mean diameter (m)\n"
+    flist[46] = "log10_geom_std_dev " + "{:.4}".format(math.log10(matrix[40])) + "           # log_10 of geometric std dev of diameter\n"
+ 
     if ss_option != None:
         # ss1
         flist[12] = "num_conc " + "{:.4}".format(matrix[27]) + "                     # particle number density (#/m^3)\n"
@@ -130,7 +135,7 @@ def modify_gas_emit(directory, matrix, DMS_option):
     for i in range(7,24):
         flist[i]=modify_gas_emit_func(flist[i], matrix[i-3])
     if DMS_option != None:
-        flist[24]=modify_gas_emit_func(flist[24], matrix[40])
+        flist[24]=modify_gas_emit_func(flist[24], matrix[43])
     else:
         flist[24]=""
     f=open(directory+"/gas_emit.dat", "w+")
@@ -175,7 +180,7 @@ def make_spec_restart(directory, scenario_num, matrix):
    
     # modify the matrix here
     # flist[1] = "output_prefix out/urban_plume_" + str(scenario_num).zfill(4) + "   # prefix of output files \n"
-    restart_time_stamp = "%08i" % int(matrix[39])
+    restart_time_stamp = "%08i" % int(matrix[42])
     
     flist[5] = "restart_file out_init/urban_plume_0001_" + restart_time_stamp + ".nc \n"
     print("restart_file out_init/urban_plume_0001_" + restart_time_stamp + ".nc \n")

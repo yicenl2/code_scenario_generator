@@ -38,3 +38,10 @@ num_conc 5.00E+07               # particle number concentration (#/m^2)
 geom_mean_diam 5e-8             # geometric mean diameter (m)
 log10_geom_std_dev 0.24         # log_10 of geometric std dev of diameter
 
+mode_name so4
+mass_frac aero_emit_comp_so4.dat # composition proportions of species
+diam_type geometric             # type of diameter specified
+mode_type log_normal            # type of distribution
+num_conc 8.00E+06               # particle number concentration (#/m^2)
+geom_mean_diam 5e-8          # geometric mean diameter (m)
+log10_geom_std_dev 0.20         # log_10 of geometric std dev of diameter

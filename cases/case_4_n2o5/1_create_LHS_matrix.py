@@ -57,7 +57,7 @@ DOY_min = 1; DOY_max = 365; #2
 # 4) Temp
 Temp_min = 0; Temp_max = 1; #3
 # 5) Restart time stamp
-restart_time_stamp_min = 1; restart_time_stamp_max = 25; #39
+restart_time_stamp_min = 1; restart_time_stamp_max = 25; #42
 # Dilution rate
 # To be added
 # Mixing height
@@ -100,7 +100,7 @@ CH3OH_emit_min = 0; CH3OH_emit_max = 2; #19
 # 17) ANOL
 ANOL_emit_min = 0; ANOL_emit_max = 2; #20
 # 18) DMS
-DMS_emit_min = 0; DMS_emit_max = 2; #40
+DMS_emit_min = 0; DMS_emit_max = 2; #43
 
 # Carbonaceous Aerosol Emissions
 # 1) Dg
@@ -144,6 +144,14 @@ sigmag2_dust_min = 1.4; sigmag2_dust_max = 2.5; #37
 # 6) Ea2
 Ea2_dust_min = 0; Ea2_dust_max = 2.38e03; #38
 
+# Sulfate Aerosol Emissions
+# 1) Dg
+Dg_so4_min = 2.5e-08; Dg_so4_max = 2.5e-07; #39
+# 2) sigmag
+sigmag_so4_min = 1.4; sigmag_so4_max = 2.5; #40
+# 3) Ea
+Ea_so4_min = 0; Ea_so4_max = 5.33e5; #41
+
 # Create Latin Hypercube Sampling matrix and save
 lhs_min = np.asarray([RH_min, Latitude_min, DOY_min, Temp_min, 
            SO2_emit_min, NO2_emit_min, NO_emit_min, NH3_emit_min, CO_emit_min,
@@ -153,7 +161,8 @@ lhs_min = np.asarray([RH_min, Latitude_min, DOY_min, Temp_min,
            Dg_cae_min, sigmag_cae_min, Ea_cae_min, BC_per_min, 
            Dg1_sse_min, sigmag1_sse_min, Ea1_sse_min, OC_1_fra_min,
            Dg2_sse_min, sigmag2_sse_min, Ea2_sse_min, OC_2_fra_min,
-           Dg1_dust_min, sigmag1_dust_min, Ea1_dust_min, Dg2_dust_min, sigmag2_dust_min, Ea2_dust_min, 
+           Dg1_dust_min, sigmag1_dust_min, Ea1_dust_min, Dg2_dust_min, sigmag2_dust_min, Ea2_dust_min,
+	   Dg_so4_min,sigmag_so4,Ea_so4_min, 
            restart_time_stamp_min, DMS_emit_min])
 lhs_max = np.asarray([RH_max, Latitude_max, DOY_max, Temp_max, 
            SO2_emit_max, NO2_emit_max, NO_emit_max, NH3_emit_max, CO_emit_max,
@@ -163,7 +172,8 @@ lhs_max = np.asarray([RH_max, Latitude_max, DOY_max, Temp_max,
            Dg_cae_max, sigmag_cae_max, Ea_cae_max, BC_per_max, 
            Dg1_sse_max, sigmag1_sse_max, Ea1_sse_max, OC_1_fra_max,
            Dg2_sse_max, sigmag2_sse_max, Ea2_sse_max, OC_2_fra_max,
-           Dg1_dust_max, sigmag1_dust_max, Ea1_dust_max, Dg2_dust_max, sigmag2_dust_max, Ea2_dust_max, 
+           Dg1_dust_max, sigmag1_dust_max, Ea1_dust_max, Dg2_dust_max, sigmag2_dust_max, Ea2_dust_max,
+	   Dg_so4_max, sigmag_so4_max,Ea_so4_max, 
            restart_time_stamp_max, DMS_emit_max])
 
 lhs_prob = pyDOE.lhs(len(lhs_min), scenarios)
@@ -214,6 +224,7 @@ for i in range (lhs.shape[0]):
     
     # aero_emit
     shutil.copy("./dat_files/aero_emit_comp_carbo.dat",directory+"/aero_emit_comp_carbo.dat")
+    shutil.copy("./dat_files/aero_emit_comp_so4.dat",directory+"/aero_emit_comp_so4.dat")
     #shutil.copy("./dat_files/aero_emit_comp_ss1.dat",directory+"/aero_emit_comp_ss1.dat")
     #shutil.copy("./dat_files/aero_emit_comp_ss2.dat",directory+"/aero_emit_comp_ss2.dat")
     #shutil.copy("./dat_files/aero_emit_comp_dust1.dat",directory+"/aero_emit_comp_dust1.dat")
