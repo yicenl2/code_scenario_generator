@@ -162,7 +162,7 @@ lhs_min = np.asarray([RH_min, Latitude_min, DOY_min, Temp_min,
            Dg1_sse_min, sigmag1_sse_min, Ea1_sse_min, OC_1_fra_min,
            Dg2_sse_min, sigmag2_sse_min, Ea2_sse_min, OC_2_fra_min,
            Dg1_dust_min, sigmag1_dust_min, Ea1_dust_min, Dg2_dust_min, sigmag2_dust_min, Ea2_dust_min,
-	   Dg_so4_min,sigmag_so4,Ea_so4_min, 
+	   Dg_so4_min,sigmag_so4_min,Ea_so4_min, 
            restart_time_stamp_min, DMS_emit_min])
 lhs_max = np.asarray([RH_max, Latitude_max, DOY_max, Temp_max, 
            SO2_emit_max, NO2_emit_max, NO_emit_max, NH3_emit_max, CO_emit_max,

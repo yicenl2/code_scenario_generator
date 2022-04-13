@@ -2,7 +2,14 @@ mode_name carbo
 mass_frac aero_emit_comp_carbo.dat # composition proportions of species
 diam_type geometric             # type of diameter specified
 mode_type log_normal            # type of distribution
-num_conc 1.088e+07                     # particle number density (#/m^3)
-geom_mean_diam 1.016e-07                # geometric mean diameter (m)
-log10_geom_std_dev 0.3446           # log_10 of geometric std dev of diameter
+num_conc 6.871e+06                     # particle number density (#/m^3)
+geom_mean_diam 3.076e-08                # geometric mean diameter (m)
+log10_geom_std_dev 0.3386           # log_10 of geometric std dev of diameter
 
+mode_name so4
+mass_frac aero_emit_comp_so4.dat # composition proportions of species
+diam_type geometric             # type of diameter specified
+mode_type log_normal            # type of distribution
+num_conc 6.757e+04                     # particle number density (#/m^3)
+geom_mean_diam 2.204e-07                # geometric mean diameter (m)
+log10_geom_std_dev 0.3536           # log_10 of geometric std dev of diameter
