@@ -11,8 +11,8 @@
 # My email address
 #SBATCH --mail-user=yicenl2@illinois.edu
 export case=case_2_n2o5
-export scenario_num_plus_1=101
-#export SLURM_SUBMIT_DIR  = /data/keeling/a/yicenl2/d/project_n2o5/code_scenario_generator 
+export scenario_num_plus_1=21
+#export SLURM_SUBMIT_DIR  = /data/keeling/a/yicenl2/d/project_n2o5/code_scenario_generator/cases/case_2_n2o5 
 # The job script can create its own job-ID-unique directory 
 # to run within.  In that case you'll need to create and populate that 
 # directory with executables and inputs

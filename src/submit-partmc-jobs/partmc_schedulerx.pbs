@@ -1,0 +1,49 @@
+#!/bin/bash
+### set the number of nodes
+### set the number of PEs per node
+#PBS -l nodes=1:ppn=32:xe
+### set the wallclock time
+#PBS -l walltime=12:00:00
+### set the job name
+#PBS -N partmc_ensemble 
+### set the job stdout and stderr
+#PBS -e $PBS_JOBID.err
+#PBS -o $PBS_JOBID.out
+### set email notification
+#PBS -m bea
+#PBS -M zzheng25@illinois.edu 
+### In case of multiple allocations, select which one to charge
+#PBS -A basl 
+
+# Load a few things
+source /opt/modules/default/init/bash
+module unload cmake
+module unload darshan # remove darshan
+module load bwpy # need python to create directories
+
+
+export case=case1
+export scenario_num_plus_1=6 
+
+# The job script can create its own job-ID-unique directory 
+# to run within.  In that case you'll need to create and populate that 
+# directory with executables and inputs
+mkdir -p /scratch/sciteam/$USER/$PBS_JOBID
+chgrp -R DD_basl /scratch/sciteam/$USER/$PBS_JOBID
+cd /scratch/sciteam/$USER/$PBS_JOBID
+
+export PMC_PATH=/u/sciteam/zheng1/partmc-2.5.0
+
+cp -r $PMC_PATH/build build
+cp -r $PMC_PATH/src src
+
+# Copy the scenario directory that holds all the inputs files
+cp -r $PBS_O_WORKDIR/cases/$case/scenarios .
+
+# Copy things to run this job
+# Need the scheduler and the joblist
+cp $PBS_O_WORKDIR/scheduler.x .
+cp $PBS_O_WORKDIR/cases/$case/joblist .
+
+# Run the library. One core per job plus one for the master.
+aprun -n $scenario_num_plus_1 ./scheduler.x joblist /bin/bash -noexit -nostdout > log 
