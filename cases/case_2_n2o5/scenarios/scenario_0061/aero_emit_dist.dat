@@ -2,30 +2,30 @@ mode_name carbo
 mass_frac aero_emit_comp_carbo.dat # composition proportions of species
 diam_type geometric             # type of diameter specified
 mode_type log_normal            # type of distribution
-num_conc 3.769e+06                     # particle number density (#/m^2)
-geom_mean_diam 1.443e-07                # geometric mean diameter (m)
-log10_geom_std_dev 0.2881           # log_10 of geometric std dev of diameter
+num_conc 1.155e+06                     # particle number density (#/m^2)
+geom_mean_diam 4.651e-08                # geometric mean diameter (m)
+log10_geom_std_dev 0.3285           # log_10 of geometric std dev of diameter
 
 mode_name dust1
 mass_frac aero_emit_comp_dust1.dat # composition proportions of species
 diam_type geometric             # type of diameter specified
 mode_type log_normal            # type of distribution
-num_conc 3.091e+04                     # particle number density (#/m^2)
-geom_mean_diam 1.523e-07                # geometric mean diameter (m)
-log10_geom_std_dev 0.3521           # log_10 of geometric std dev of diameter
+num_conc 3.744e+05                     # particle number density (#/m^2)
+geom_mean_diam 1.598e-07                # geometric mean diameter (m)
+log10_geom_std_dev 0.3833           # log_10 of geometric std dev of diameter
 
 mode_name dust2
 mass_frac aero_emit_comp_dust2.dat # composition proportions of species
 diam_type geometric             # type of diameter specified
 mode_type log_normal            # type of distribution
-num_conc 1.281e+03                     # particle number density (#/m^2)
-geom_mean_diam 5.35e-06                # geometric mean diameter (m)
-log10_geom_std_dev 0.221           # log_10 of geometric std dev of diameter
+num_conc 2.017e+03                     # particle number density (#/m^2)
+geom_mean_diam 4.359e-06                # geometric mean diameter (m)
+log10_geom_std_dev 0.2487           # log_10 of geometric std dev of diameter
 
 mode_name sulfate
 mass_frac aero_emit_comp_so4.dat # composition proportions of species
 diam_type geometric             # type of diameter specified
 mode_type log_normal            # type of distribution
-num_conc 2.228e+05                     # particle number density (#/m^3)
-geom_mean_diam 1.646e-07                # geometric mean diameter (m)
-log10_geom_std_dev 0.3652           # log_10 of geometric std dev of diameter
+num_conc 3.424e+05                     # particle number density (#/m^3)
+geom_mean_diam 1.31e-07                # geometric mean diameter (m)
+log10_geom_std_dev 0.2261           # log_10 of geometric std dev of diameter

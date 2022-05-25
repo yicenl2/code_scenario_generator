@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=PartMCScenarioGen1
-#SBATCH -n 24
+#SBATCH -n 101
 #SBATCH -p sesempi 
 #SBATCH --time=24:00:00
 #SBATCH --mem-per-cpu=4000
@@ -11,7 +11,7 @@
 # My email address
 #SBATCH --mail-user=yicenl2@illinois.edu
 export case=case_4_n2o5
-export scenario_num_plus_1=21
+export scenario_num_plus_1=101
 #export SLURM_SUBMIT_DIR  = /data/keeling/a/yicenl2/d/project_n2o5/code_scenario_generator/cases/case_4_n2o5 
 # The job script can create its own job-ID-unique directory 
 # to run within.  In that case you'll need to create and populate that 

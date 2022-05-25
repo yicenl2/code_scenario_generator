@@ -68,9 +68,9 @@ restart_time_stamp_min = 1; restart_time_stamp_max = 25; #42
 # 1) SO2
 SO2_emit_min = 0; SO2_emit_max = 2; #4
 # 2) NO2
-NO2_emit_min = 0; NO2_emit_max = 2; #5
+NO2_emit_min = 0; NO2_emit_max = 1; #5
 # 3) NO
-NO_emit_min = 0; NO_emit_max = 2; #6
+NO_emit_min = 0; NO_emit_max = 1; #6
 # 4) NH3
 NH3_emit_min = 0; NH3_emit_max = 2; #7
 # 5) CO
